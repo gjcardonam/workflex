@@ -2,23 +2,23 @@ import { createStackNavigator } from "@react-navigation/stack";
 import ExerciseCatalogueScreen from "../screens/ExerciseCatalogueScreen";
 import ExerciseDetailScreen from "../screens/ExerciseDetailScreen";
 
-const ExerciseStack = createStackNavigator();
+const ExerciseCatalogueStack = createStackNavigator();
 
-function ExerciseStackNavigator() {
+function ExerciseCatalogueStackNavigator() {
   return (
-    <ExerciseStack.Navigator>
-      <ExerciseStack.Screen
+    <ExerciseCatalogueStack.Navigator>
+      <ExerciseCatalogueStack.Screen
         name="ExerciseCatalogue"
         component={ExerciseCatalogueScreen}
         options={{ headerShown: false }}
       />
-      <ExerciseStack.Screen
+      <ExerciseCatalogueStack.Screen
         name="ExerciseDetail"
         component={ExerciseDetailScreen}
         options={{ headerShown: false }}
       />
-    </ExerciseStack.Navigator>
+    </ExerciseCatalogueStack.Navigator>
   );
 }
 
-export default ExerciseStackNavigator;
+export default ExerciseCatalogueStackNavigator;

@@ -1,10 +1,9 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import RoutineScreen from './screens/RoutineScreen';
+import { StyleSheet } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
-import ExerciseStackNavigator from './navigation/ExerciseStackNavigator';
+import ExerciseCatalogueStackNavigator from './navigation/ExerciseCatalogueStackNavigator';
+import DailyRoutineStackNavigator from './navigation/DailyRoutineStackNavigator';
 
 
 const Tab = createBottomTabNavigator();
@@ -13,18 +12,19 @@ export default function App() {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Exercise" component={ExerciseStackNavigator} options={{
+        <Tab.Screen name="Exercise" component={ExerciseCatalogueStackNavigator} options={{
           tabBarLabel: 'Exercises',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="dumbbell" color={color} size={size} />
           ),
           headerShown: false
         }}/>
-        <Tab.Screen name="Routine" component={RoutineScreen} options={{
-          tabBarLabel: 'Routines',
+        <Tab.Screen name="Train" component={DailyRoutineStackNavigator} options={{
+          tabBarLabel: 'Train',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="format-list-bulleted" color={color} size={size} />
-          ),        
+          ),
+          headerShown: false  
         }}/>
       </Tab.Navigator>
     </NavigationContainer>

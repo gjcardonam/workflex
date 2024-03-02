@@ -1,44 +1,30 @@
-import { FlatList } from "react-native";
-import DiaRutina from "../components/specific/DiaRutina";
-
-const rutinasSemanales = [
-  { id: 1, 
-    dia: "Lunes", 
-    rutina: "Pecho - Triceps", 
-    duracion: "30 minutos" },
-  {
-    id: 2,
-    dia: "Martes",
-    rutina: "Espalda - Biceps",
-    duracion: "30 minutos",
-  },
-];
+import { FlatList, View, Text, TouchableOpacity, Modal } from "react-native";
+import DayRoutine from "../components/specific/DayRoutine";
+import React, { useState } from "react";
+import styles from "../styles/DailyRoutineScreenStyle";
+import rutinasSemanales from "../data/rutinas";
 
 const DailyRoutineScreen = ({ navigation }) => {
   const [rutinas, setRutinas] = useState(rutinasSemanales);
+  const [modalVisible, setModalVisible] = useState(false);
 
   return (
-    <View>
-      <Text>Rutinas Diarias</Text>
-      <Text>Fecha</Text>
+    <View style={styles.container}>
+      <Text style={styles.title}>Rutinas Diarias</Text>
+      <Text style={styles.date}>Fecha</Text>
       <FlatList
+        style={styles.routinelist}
         data={rutinas}
-        keyExtractor={(item) => item.id}
-        renderItem={({ item }) => {
-          return (
-            <DiaRutina
-              dia={item.dia}
-              rutina={item.rutina}
-              duracion={item.duracion}
-              onPress={() => {
-                navigation.navigate("Routine", {
-                  dia: item.dia,
-                  rutina: item.rutina,
-                });
-              }}
-            />
-          );
-        }}
+        keyExtractor={(item) => item.id.toString()}
+        renderItem={({ item }) => (
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("RoutineDetail", { routine: item })
+            }
+          >
+            <DayRoutine item={item} />
+          </TouchableOpacity>
+        )}
       />
     </View>
   );
