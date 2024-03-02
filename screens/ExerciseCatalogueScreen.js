@@ -3,7 +3,7 @@ import { View, FlatList, Text, TouchableOpacity, KeyboardAvoidingView, Platform 
 import {exercises} from "../assets/data/ejercicios";
 import styles from "../styles/ExerciseCatalogueStyles";
 import MuscleFilter from "../components/specific/MuscleFilter";
-import ExerciseItem from "../components/specific/ExerciseItem";
+import ExerciseItem from "../components/commons/ExerciseItem";
 import SearchBar from "../components/specific/SearchBar";
 import { muscles } from "../assets/data/ejercicios";
 

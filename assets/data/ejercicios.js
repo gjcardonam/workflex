@@ -8,6 +8,7 @@ const exercises = [
       description:
         "Las aperturas en la máquina Pec Deck son ideales para aislar y trabajar los músculos pectorales.",
       gif: require("../gifs/AperturasEnMaquinaPecDeck.webp"),
+      recomendado: true,
     },
     {
       id: "2",
@@ -16,6 +17,7 @@ const exercises = [
       description:
         "Las bicycle crunches son un excelente ejercicio para fortalecer los músculos abdominales y oblicuos.",
       gif: require("../gifs/BicicletasBicycleCrunches.gif"),
+      recomendado: true,
     },
     {
       id: "3",
@@ -24,6 +26,7 @@ const exercises = [
       description:
         "El cruce de poleas cable crossovers es un ejercicio efectivo para desarrollar los pectorales.",
       gif: require("../gifs/CruceDePoleasCableCrossovers.gif"),
+      recomendado: false,
     },
     {
       id: "4",
@@ -32,6 +35,7 @@ const exercises = [
       description:
         "Los crunches son un ejercicio clásico para fortalecer los músculos abdominales.",
       gif: require("../gifs/Crunches.gif"),
+      recomendado: false,
     },
     {
       id: "5",
@@ -40,6 +44,7 @@ const exercises = [
       description:
         "Los crunches en máquina son una variación efectiva de los crunches tradicionales para trabajar los abdominales.",
       gif: require("../gifs/Crunchesenmaquina.webp"),
+      recomendado: false,
     },
     {
       id: "6",
@@ -48,6 +53,7 @@ const exercises = [
       description:
         "El curl con barra es uno de los mejores ejercicios para desarrollar los músculos del bíceps.",
       gif: require("../gifs/Curlconbarra.gif"),
+      recomendado: true,
     },
     {
       id: "7",
@@ -56,6 +62,7 @@ const exercises = [
       description:
         "El curl con barra ZEZ es una variación efectiva del curl con barra tradicional para el desarrollo de los bíceps.",
       gif: require("../gifs/CurlconbarraZEZ.gif"),
+      recomendado: false,
     },
     {
       id: "8",
@@ -64,6 +71,7 @@ const exercises = [
       description:
         "El curl concentrado es un ejercicio de aislamiento que se centra en el desarrollo de los bíceps.",
       gif: require("../gifs/Curlconcentrado.gif"),
+      recomendado: false,
     },
     {
       id: "9",
@@ -72,6 +80,7 @@ const exercises = [
       description:
         "El curl con mancuernas es una excelente opción para desarrollar los músculos del bíceps de forma simétrica.",
       gif: require("../gifs/Curlconmancuernas.gif"),
+      recomendado: false,
     },
     {
       id: "10",
@@ -80,6 +89,7 @@ const exercises = [
       description:
         "El curl de bíceps inclinado es un ejercicio que se realiza en un banco inclinado y se centra en el desarrollo de los bíceps.",
       gif: require("../gifs/Curldebicepsinclinado.webp"),
+      recomendado: false,
     },
     {
       id: "11",
@@ -88,6 +98,7 @@ const exercises = [
       description:
         "El curl de martillo es una variante del curl de bíceps que también trabaja los músculos de los antebrazos.",
       gif: require("../gifs/CurldemartilloHammerCurl.gif"),
+      recomendado: true,
     },
     {
       id: "12",
@@ -96,6 +107,7 @@ const exercises = [
       description:
         "El curl de pie con barra de resistencia es un ejercicio efectivo para trabajar los músculos del bíceps.",
       gif: require("../gifs/Curldepieconbarraderesistencia.webp"),
+      recomendado: false,
     },
     {
       id: "13",
@@ -104,6 +116,7 @@ const exercises = [
       description:
         "El curl en polea es un ejercicio versátil que permite trabajar los músculos del bíceps con resistencia constante.",
       gif: require("../gifs/Curlenpolea.gif"),
+      recomendado: false,
     },
     {
       id: "14",
@@ -112,6 +125,7 @@ const exercises = [
       description:
         "El curl predicador se realiza en un banco predicador y se centra en aislar los músculos del bíceps.",
       gif: require("../gifs/Curlpredicador.gif"),
+      recomendado: false,
     },
     {
       id: "15",
@@ -120,6 +134,7 @@ const exercises = [
       description:
         "Las dominadas son un ejercicio básico pero efectivo para desarrollar fuerza en la espalda y los bíceps.",
       gif: require("../gifs/DominadasPullups.webp"),
+      recomendado: false,
     },
     {
       id: "16",
@@ -128,6 +143,7 @@ const exercises = [
       description:
         "Las elevaciones de piernas colgando son un ejercicio avanzado para fortalecer los abdominales inferiores.",
       gif: require("../gifs/ElevacionesdepiernascolgandoHangingLegRaises.gif"),
+      recomendado: false,
     },
     {
       id: "17",
@@ -136,6 +152,7 @@ const exercises = [
       description:
         "Las elevaciones de piernas son un excelente ejercicio para fortalecer los abdominales inferiores.",
       gif: require("../gifs/ElevacionesdepiernasLegRaises.webp"),
+      recomendado: false,
     },
     {
       id: "18",
@@ -144,6 +161,7 @@ const exercises = [
       description:
         "Las elevaciones de talones sentado son ideales para fortalecer los músculos de la pantorrilla.",
       gif: require("../gifs/ElevacionesdetalonessentadoSeatedCalfRaises.gif"),
+      recomendado: true,
     },
     // {
     //   id: "19",
@@ -160,6 +178,7 @@ const exercises = [
       description:
         "Las elevaciones laterales con mancuernas son efectivas para trabajar los músculos del hombro lateral.",
       gif: require("../gifs/Elevacioneslateralesconmancuernas.webp"),
+      recomendado: false,
     },
     {
       id: "21",
@@ -168,6 +187,7 @@ const exercises = [
       description:
         "Las elevaciones laterales en polea son ideales para aislar y trabajar los músculos del hombro lateral.",
       gif: require("../gifs/Elevacioneslateralesenpolea.gif"),
+      recomendado: false,
     },
     {
       id: "22",
@@ -176,6 +196,7 @@ const exercises = [
       description:
         "La extensión de tríceps en máquina es un excelente ejercicio para aislar y fortalecer los tríceps.",
       gif: require("../gifs/ExtensiondetricepsenmaquinaPressdetriceps.gif"),
+      recomendado: true,
     },
     {
       id: "23",
@@ -184,6 +205,7 @@ const exercises = [
       description:
         "La extensión de tríceps en polea alta es un ejercicio efectivo para desarrollar los tríceps.",
       gif: require("../gifs/Extensiondetricepsenpoleaalta.webp"),
+      recomendado: false,
     },
     {
       id: "24",
@@ -192,6 +214,7 @@ const exercises = [
       description:
         "La extensión de tríceps en polea con cuerda es ideal para trabajar los tríceps de manera efectiva.",
       gif: require("../gifs/Extensiondetricepsenpoleaconcuerda.webp"),
+      recomendado: false,
     },
     {
       id: "25",
@@ -200,6 +223,7 @@ const exercises = [
       description:
         "La extensión de tríceps sobre la cabeza con mancuerna es un excelente ejercicio para desarrollar los tríceps.",
       gif: require("../gifs/Extensiondetricepssobrelacabezaconmancuerna.webp"),
+      recomendado: false,
     },
     {
       id: "26",
@@ -208,6 +232,7 @@ const exercises = [
       description:
         "Las extensiones de piernas son un ejercicio clave para aislar y fortalecer los cuádriceps.",
       gif: require("../gifs/ExtensionesdepiernasLegExtensions.gif"),
+      recomendado: false,
     },
     {
       id: "27",
@@ -216,6 +241,7 @@ const exercises = [
       description:
         "El Face Pull es un ejercicio efectivo para trabajar los deltoides y la parte superior de la espalda.",
       gif: require("../gifs/FacePull.gif"),
+      recomendado: true,
     },
     {
       id: "28",
@@ -224,6 +250,7 @@ const exercises = [
       description:
         "Las flexiones de brazos son un ejercicio básico pero efectivo para fortalecer el pecho, hombros y tríceps.",
       gif: require("../gifs/FlexionesdebrazosPushups.gif"),
+      recomendado: true,
     },
     {
       id: "29",
@@ -232,6 +259,7 @@ const exercises = [
       description:
         "Los Flyes son un ejercicio excelente para desarrollar y definir los músculos pectorales.",
       gif: require("../gifs/flyes.gif"),
+      recomendado: false,
     },
     {
       id: "30",
@@ -240,6 +268,7 @@ const exercises = [
       description:
         "Los Fondos en paralelas son un gran ejercicio compuesto que trabaja el pecho y los tríceps.",
       gif: require("../gifs/Fondosenparalelas.webp"),
+      recomendado: false,
     },
     {
       id: "31",
@@ -248,6 +277,7 @@ const exercises = [
       description:
         "Los Fondos en paralelas enfocados en pecho ponen más énfasis en el desarrollo del pectoral.",
       gif: require("../gifs/Fondosenparalelasenfocadosenpecho.webp"),
+      recomendado: false,
     },
 
     {
@@ -257,6 +287,7 @@ const exercises = [
       description:
         "Las hiperextensiones son un ejercicio eficaz para fortalecer la espalda baja y los glúteos.",
       gif: require("../gifs/Hiperextensiones.gif"),
+      recomendado: false,
     },
     {
       id: "33",
@@ -265,6 +296,7 @@ const exercises = [
       description:
         "Los jalones al pecho en polea son ideales para desarrollar la espalda y los bíceps.",
       gif: require("../gifs/JalonesalpechoenpoleaLatPulldowns.gif"),
+      recomendado: false,
     },
     {
       id: "34",
@@ -273,6 +305,7 @@ const exercises = [
       description:
         "Este ejercicio se enfoca en la parte central de la espalda y los bíceps con un agarre estrecho.",
       gif: require("../gifs/Jalonesenpoleaconagarreestrecho.gif"),
+      recomendado: false,
     },
     {
       id: "35",
@@ -281,6 +314,7 @@ const exercises = [
       description:
         "Los pájaros con mancuernas son excelentes para trabajar los deltoides posteriores y el trapecio.",
       gif: require("../gifs/PajarosconmancuernasReverseFlyes.webp"),
+      recomendado: false,
     },
     {
       id: "36",
@@ -289,6 +323,7 @@ const exercises = [
       description:
         "La patada de tríceps con mancuerna es un ejercicio efectivo para aislar y fortalecer los tríceps.",
       gif: require("../gifs/Patadadetricepsconmancuerna.gif"),
+      recomendado: false,
     },
     {
       id: "37",
@@ -297,6 +332,7 @@ const exercises = [
       description:
         "El peso muerto es un ejercicio compuesto que trabaja varios grupos musculares, incluyendo la espalda baja y las piernas.",
       gif: require("../gifs/PesomuertoDeadlift.gif"),
+      recomendado: true,
     },
     {
       id: "38",
@@ -305,6 +341,7 @@ const exercises = [
       description:
         "El peso muerto rumano se enfoca en los músculos isquiotibiales y la espalda baja.",
       gif: require("../gifs/PesomuertorumanoRomanianDeadlifts.gif"),
+      recomendado: false,
     },
     {
       id: "39",
@@ -313,6 +350,7 @@ const exercises = [
       description:
         "La plancha es un ejercicio de resistencia que fortalece los músculos abdominales y lumbares.",
       gif: require("../gifs/PlanchaPlank.gif"),
+      recomendado: false,
     },
     {
       id: "40",
@@ -321,6 +359,7 @@ const exercises = [
       description:
         "La prensa de piernas es un ejercicio efectivo para desarrollar fuerza y masa muscular en las piernas.",
       gif: require("../gifs/PrensadepiernasLegPress.gif"),
+      recomendado: false,
     },
     {
       id: "41",
@@ -329,6 +368,7 @@ const exercises = [
       description:
         "El press Arnold es una variante del press de hombros que trabaja los deltoides desde diferentes ángulos.",
       gif: require("../gifs/PressArnold.gif"),
+      recomendado: false,
     },
     {
       id: "42",
@@ -337,6 +377,7 @@ const exercises = [
       description:
         "El press con mancuernas es un ejercicio compuesto que trabaja los pectorales, deltoides y tríceps.",
       gif: require("../gifs/Pressconmancuernas.webp"),
+      recomendado: false,
     },
     {
       id: "43",
@@ -345,6 +386,7 @@ const exercises = [
       description:
         "El press de banca es uno de los mejores ejercicios para desarrollar fuerza y masa muscular en el pecho.",
       gif: require("../gifs/Pressdebanca.webp"),
+      recomendado: false,
     },
     {
       id: "44",
@@ -353,6 +395,7 @@ const exercises = [
       description:
         "El press de banca cerrado se enfoca más en los tríceps y también trabaja el pecho y los hombros.",
       gif: require("../gifs/Pressdebancacerrado.webp"),
+      recomendado: false,
     },
 
     {
@@ -362,6 +405,7 @@ const exercises = [
       description:
         "El press de banco declinado se centra en la porción inferior del pecho.",
       gif: require("../gifs/Pressdebancadeclinado.webp"),
+      recomendado: false,
     },
     {
       id: "46",
@@ -370,6 +414,7 @@ const exercises = [
       description:
         "El press de banco inclinado se enfoca en la porción superior del pecho.",
       gif: require("../gifs/Pressdebancainclinado.webp"),
+      recomendado: false,
     },
     {
       id: "47",
@@ -378,6 +423,7 @@ const exercises = [
       description:
         "El press de hombro con mancuernas es un ejercicio efectivo para desarrollar los deltoides.",
       gif: require("../gifs/Pressdehombroconmancuernas.webp"),
+      recomendado: false,
     },
     {
       id: "48",
@@ -386,6 +432,7 @@ const exercises = [
       description:
         "El press francés es un ejercicio de aislamiento para los tríceps.",
       gif: require("../gifs/Pressfrances.gif"),
+      recomendado: false,
     },
     {
       id: "49",
@@ -394,6 +441,7 @@ const exercises = [
       description:
         "El press militar es un ejercicio básico para desarrollar los deltoides.",
       gif: require("../gifs/Pressmilitar.gif"),
+      recomendado: false,
     },
     {
       id: "50",
@@ -402,6 +450,7 @@ const exercises = [
       description:
         "Los puentes de glúteo son excelentes para fortalecer los músculos de los glúteos y la parte baja de la espalda.",
       gif: require("../gifs/PuentesdegluteoHipThrusts.jpg"),
+      recomendado: true,
     },
     {
       id: "51",
@@ -410,6 +459,7 @@ const exercises = [
       description:
         "El pullover con mancuerna es un ejercicio que trabaja principalmente los músculos del pecho y la espalda.",
       gif: require("../gifs/Pulloverconmancuerna.gif"),
+      recomendado: false,
     },
     {
       id: "52",
@@ -418,6 +468,7 @@ const exercises = [
       description:
         "El pullover con barra es un ejercicio clásico para trabajar el pecho y la espalda.",
       gif: require("../gifs/Pulloverconmancuernaobarra.gif"),
+      recomendado: false,
     },
     {
       id: "53",
@@ -426,6 +477,7 @@ const exercises = [
       description:
         "El remo con barra es un ejercicio compuesto que trabaja la espalda y los bíceps.",
       gif: require("../gifs/RemoconbarraBentoverRow.webp"),
+      recomendado: false,
     },
     {
       id: "54",
@@ -434,6 +486,7 @@ const exercises = [
       description:
         "El remo con barra TT es una variante del remo con barra estándar que enfatiza los músculos de la espalda.",
       gif: require("../gifs/RemoconbarraTTbarRow.webp"),
+      recomendado: false,
     },
     {
       id: "55",
@@ -442,6 +495,7 @@ const exercises = [
       description:
         "El remo con mancuerna a una mano es un excelente ejercicio unilateral para desarrollar la espalda y los bíceps.",
       gif: require("../gifs/Remoconmancuernaaunamano.webp"),
+      recomendado: false,
     },
     {
       id: "56",
@@ -450,6 +504,7 @@ const exercises = [
       description:
         "El remo en máquina es un ejercicio efectivo para desarrollar la espalda y los bíceps.",
       gif: require("../gifs/RemoenmaquinaSeatedRow.gif"),
+      recomendado: false,
     },
     {
       id: "57",
@@ -458,6 +513,7 @@ const exercises = [
       description:
         "El rodillo abdominal es un ejercicio avanzado que trabaja los músculos abdominales y el core.",
       gif: require("../gifs/RodilloabdominalAbWheelRollouts.webp"),
+      recomendado: false,
     },
     {
       id: "58",
@@ -466,6 +522,7 @@ const exercises = [
       description:
         "El rompecráneos es un ejercicio de aislamiento para los tríceps.",
       gif: require("../gifs/RompecraneosSkullcrushers.webp"),
+      recomendado: false,
     },
     {
       id: "59",
@@ -474,6 +531,7 @@ const exercises = [
       description:
         "Las sentadillas búlgaras son un excelente ejercicio unilateral para trabajar las piernas y los glúteos.",
       gif: require("../gifs/SentadillasbulgarasBulgarianSplitSquats.gif"),
+      recomendado: false,
     },
     {
       id: "60",
@@ -482,6 +540,7 @@ const exercises = [
       description:
         "Las sentadillas frontales son una variante de las sentadillas que ponen más énfasis en los músculos del core y las piernas.",
       gif: require("../gifs/SentadillasfrontalesFrontSquats.webp"),
+      recomendado: false,
     },
 
     {
@@ -491,6 +550,7 @@ const exercises = [
       description:
         "Las sentadillas sumo son una variante que pone más énfasis en los glúteos y los músculos internos del muslo.",
       gif: require("../gifs/SentadillassumoSumoSquats.webp"),
+      recomendado: false,
     },
     {
       id: "62",
@@ -499,6 +559,7 @@ const exercises = [
       description:
         "Los shrugs son excelentes para desarrollar los músculos trapecios y mejorar la postura.",
       gif: require("../gifs/Shrugsconmancuernasobarra.gif"),
+      recomendado: false,
     },
     {
       id: "63",
@@ -507,6 +568,7 @@ const exercises = [
       description:
         "Los step ups son un ejercicio efectivo para fortalecer las piernas y los glúteos, además de mejorar el equilibrio.",
       gif: require("../gifs/Stepups.gif"),
+      recomendado: false,
     },
     {
       id: "64",
@@ -515,6 +577,7 @@ const exercises = [
       description:
         "Los step ups en banco o caja son una variante que aumenta el rango de movimiento y la dificultad del ejercicio.",
       gif: require("../gifs/Stepupsenbancoocaja.gif"),
+      recomendado: false,
     },
     {
       id: "65",
@@ -523,6 +586,7 @@ const exercises = [
       description:
         "Las tijeras verticales son un ejercicio efectivo para fortalecer los abdominales inferiores.",
       gif: require("../gifs/TijerasverticalesScissorKicks.gif"),
+      recomendado: false,
     },
     {
       id: "66",
@@ -531,6 +595,7 @@ const exercises = [
       description:
         "El remo vertical es un ejercicio que trabaja los hombros y los trapecios.",
       gif: require("../gifs/UprightRowRemovertical.gif"),
+      recomendado: false,
     },
     {
       id: "67",
@@ -539,6 +604,7 @@ const exercises = [
       description:
         "Las zancadas son un ejercicio que trabaja las piernas, los glúteos y mejora el equilibrio.",
       gif: require("../gifs/ZancadasLunges.gif"),
+      recomendado: false,
     },
 
     {
@@ -548,6 +614,7 @@ const exercises = [
       description:
         "Las sentadillas Hack son un excelente ejercicio para trabajar los cuádriceps y los glúteos.",
       gif: require("../gifs/SentadillasHack.gif"),
+      recomendado: false,
     },
     {
       id: "69",
@@ -556,6 +623,7 @@ const exercises = [
       description:
         "Las sentadillas son uno de los mejores ejercicios para desarrollar fuerza y tamaño en las piernas.",
       gif: require("../gifs/SentadillasSquats.gif"),
+      recomendado: false,
     },
     {
       id: "70",
@@ -564,6 +632,7 @@ const exercises = [
       description:
         "Los fondos entre bancos son un excelente ejercicio compuesto que trabaja los tríceps y el pecho.",
       gif: require("../gifs/Fondosentrebancos.webp"),
+      recomendado: false,
     },
   ];
 

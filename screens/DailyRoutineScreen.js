@@ -1,8 +1,8 @@
-import { FlatList, View, Text, TouchableOpacity, Modal } from "react-native";
+import { FlatList, View, Text, TouchableOpacity } from "react-native";
 import DayRoutine from "../components/specific/DayRoutine";
 import React, { useState } from "react";
 import styles from "../styles/DailyRoutineScreenStyle";
-import rutinasSemanales from "../data/rutinas";
+import rutinasSemanales from "../assets/data/rutinas";
 
 const DailyRoutineScreen = ({ navigation }) => {
   const [rutinas, setRutinas] = useState(rutinasSemanales);
@@ -18,9 +18,13 @@ const DailyRoutineScreen = ({ navigation }) => {
         keyExtractor={(item) => item.id.toString()}
         renderItem={({ item }) => (
           <TouchableOpacity
-            onPress={() =>
-              navigation.navigate("RoutineDetail", { routine: item })
-            }
+            onPress={() => {
+              if (item.rutina === "Descanso") {
+                navigation.navigate("MuscleSelection", { item: item });
+              } else {
+                navigation.navigate("RoutineDetail", { item: item });
+              }
+            }}
           >
             <DayRoutine item={item} />
           </TouchableOpacity>

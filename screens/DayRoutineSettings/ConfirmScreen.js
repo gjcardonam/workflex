@@ -1,12 +1,12 @@
-import { Text, View, TouchableOpacity, Alert } from 'react-native';
+import React from 'react';
+import { View, Text, TouchableOpacity } from 'react-native';
 
-const DefaultExcersises = ({ route, navigation }) => {
-    const { item, selectedMuscles } = route.params;
+const ConfirmScreen = ({ navigation }) => {
     return (
         <View>
-            <Text>Quieres dejar los ejercicios recomendados?</Text>
+            <Text>Quieres guardar los cambios?</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate('DefaultWeightSeries', { item: item, selectedMuscles: selectedMuscles })}
+                onPress={() => navigation.navigate('Home')}
                 style={{
                     backgroundColor: 'lightblue',
                     padding: 10,
@@ -16,7 +16,7 @@ const DefaultExcersises = ({ route, navigation }) => {
                 <Text>Si</Text>
             </TouchableOpacity>
             <TouchableOpacity
-                onPress={() => navigation.navigate('ExcersisesSelection', { item: item, selectedMuscles: selectedMuscles })}
+                onPress={() => navigation.navigate('DayRoutineSettings')}
                 style={{
                     backgroundColor: 'lightblue',
                     padding: 10,
@@ -29,4 +29,4 @@ const DefaultExcersises = ({ route, navigation }) => {
     )
 }
 
-export default DefaultExcersises;
+export default ConfirmScreen;
