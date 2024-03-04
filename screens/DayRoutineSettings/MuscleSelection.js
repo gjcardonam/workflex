@@ -33,7 +33,21 @@ const MuscleSelection = ({ navigation, route }) => {
                 </TouchableOpacity>
             ))}
             <TouchableOpacity
-                onPress={() => navigation.navigate('DafaultExcercise', { item: item, selectedMuscles: selectedMuscles })}
+                onPress={() => {
+                    if (selectedMuscles.length === 0) {
+                        Alert.alert(
+                            "Selección requerida", // Título de la alerta
+                            "Debes seleccionar al menos un músculo para continuar.", // Mensaje de la alerta
+                            [
+                                { text: "OK" } // Botón para cerrar la alerta
+                            ],
+                            { cancelable: false } // Evita que la alerta se cierre al tocar fuera de ella
+                        );
+                    } else {
+                        // Navega a la siguiente pantalla si hay músculos seleccionados
+                        navigation.navigate('DafaultExcercise', { item: item, selectedMuscles: selectedMuscles });
+                    }
+                }}
                 style={{
                     backgroundColor: 'lightblue',
                     padding: 10,

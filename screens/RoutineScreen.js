@@ -1,16 +1,16 @@
 import React from "react";
-import { useState, useRef } from "react";
+import { useState } from "react";
 import {
   Dimensions,
-  ScrollView,
   View,
   Text,
   TextInput,
   StyleSheet,
-  TouchableOpacity,
 } from "react-native";
 import rutinasSemanales from "../assets/data/rutinas.js";
 import ExerciseItem from "../components/commons/ExerciseItem";
+import { TabView, TabBar } from 'react-native-tab-view';
+
 
 const { width } = Dimensions.get("window"); // Obtén el ancho de la pantalla
 
@@ -24,8 +24,12 @@ const RoutineScreen = ({ route, navigation }) => {
       series: [{ repeticiones: "", peso: "" }],
     }))
   );
-  const [activeIndex, setActiveIndex] = useState(0);
-  const exerciseScrollViewRef = useRef();
+  const [routes] = useState(exercises.map((exercise, index) => ({
+    key: `exercise_${index}`,
+    title: exercise.name,
+    exercise,
+  })));
+  const [index, setIndex] = useState(0);
 
   const handleSeriesChange = (exerciseId, seriesIndex, field, value) => {
     const newExercises = exercises.map((exercise) => {
@@ -49,105 +53,46 @@ const RoutineScreen = ({ route, navigation }) => {
     setExercises(newExercises);
   };
 
-  return (
-    <View style={styles.container}>
-      <Text>Rutina para {routine.dia}</Text>
-      <Text>Duración: {routine.duracion}</Text>
-      <ScrollView
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        style={styles.titlesContainer}
-      >
-        {exercises.map((exercise, index) => (
-          <TouchableOpacity
-            key={index}
-            style={[
-              styles.titleItem,
-              activeIndex === index && styles.activeTitle,
-            ]}
-            onPress={() => {
-                setActiveIndex(index);
-                exerciseScrollViewRef.current.scrollTo({
-                  x: width * index,
-                  y: 0,
-                  animated: true,
-                });
-              }}
-          >
-            <Text style={activeIndex === index ? styles.activeTitleText : {}}>{exercise.name}</Text>
-          </TouchableOpacity>
+  const ExerciseScene = ({ route }) => {
+    const { exercise } = route;
+    return (
+      <View style={styles.scene}>
+        <ExerciseItem item={exercise} />
+        {exercise.series.map((serie, seriesIndex) => (
+          <View key={seriesIndex} style={styles.seriesContainer}>
+            <Text>Series {seriesIndex + 1}</Text>
+            <TextInput
+              style={styles.input}
+              placeholder="Repeticiones"
+              keyboardType="number-pad"
+              value={serie.repeticiones}
+              onChangeText={(text) => handleSeriesChange(exercise.id, seriesIndex, "repeticiones", text)}
+            />
+            <TextInput
+              style={styles.input}
+              placeholder="Peso"
+              keyboardType="number-pad"
+              value={serie.peso}
+              onChangeText={(text) => handleSeriesChange(exercise.id, seriesIndex, "peso", text)}
+            />
+          </View>
         ))}
-      </ScrollView>
+      </View>
+    );
+  };
 
-      {routine ? (
-        <ScrollView
-        horizontal
-        pagingEnabled
-        showsHorizontalScrollIndicator={false}
-        ref={exerciseScrollViewRef}
-        onMomentumScrollEnd={(e) => {
-          const activeIndex = Math.round(
-            e.nativeEvent.contentOffset.x / width
-          );
-          setActiveIndex(activeIndex);
-        }}
-      >
-          {exercises.map((exercise, index) => (
-            <View key={index} style={styles.exerciseContainer}>
-              <ExerciseItem item={exercise} />
-              {exercise.series.map((serie, seriesIndex) => (
-                <View key={seriesIndex} style={styles.seriesContainer}>
-                  <Text>Series {seriesIndex + 1}</Text>
-                  <TextInput
-                    style={styles.input}
-                    placeholder="Repeticiones"
-                    keyboardType="number-pad"
-                    value={serie.repeticiones}
-                    onChangeText={(text) =>
-                      handleSeriesChange(
-                        exercise.id,
-                        seriesIndex,
-                        "repeticiones",
-                        text
-                      )
-                    }
-                  />
-                  <TextInput
-                    style={styles.input}
-                    placeholder="Peso"
-                    keyboardType="number-pad"
-                    value={serie.peso}
-                    onChangeText={(text) =>
-                      handleSeriesChange(exercise.id, seriesIndex, "peso", text)
-                    }
-                  />
-                </View>
-              ))}
-            </View>
-          ))}
-        </ScrollView>
-      ) : (
-        <Text>No se encontró la rutina para {item.dia}</Text>
-      )}
-      <TouchableOpacity
-        onPress={() => {
-          navigation.navigate("DailyRoutine");
-        }}
-      >
-        <Text
-          style={{
-            backgroundColor: "lightblue",
-            color: "black",
-            padding: 10,
-            textAlign: "center",
-            marginTop: 20,
-            borderRadius: 5,
-          }}
-        >
-          Guardar
-        </Text>
-      </TouchableOpacity>
-    </View>
+  const renderScene = ({ route }) => {
+    return <ExerciseScene route={route} />;
+  };
+  
+  return (
+    <TabView
+      navigationState={{ index, routes }}
+      renderScene={renderScene}
+      onIndexChange={setIndex}
+      initialLayout={{ width: Dimensions.get('window').width }}
+      renderTabBar={props => <TabBar {...props} scrollEnabled />}
+    />
   );
 };
 

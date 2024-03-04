@@ -7,7 +7,7 @@ const DefaultWeightSeries = ({ route, navigation }) => {
         <View>
             <Text>Quieres dejar las series y pesos recomendados?</Text>
             <TouchableOpacity
-                onPress={() => navigation.navigate('confirmationScreen')}
+                onPress={() => navigation.navigate('DailyRoutine')}
                 style={{
                     backgroundColor: 'lightblue',
                     padding: 10,
